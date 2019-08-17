@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>LLC - Lets Connect</title>
+<link rel="stylesheet" href="llc_css.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1" />
+
+</head>
+<body>
+<div class="container">
+    <img src="memories"><br><br>
+<form id="order_form">
+
+  <div>
+    <label>Name</label>
+    <input type="text" id="txtName" placeholder="First Last"/>
+  </div>
+
+  <div>
+    <label>Email</label>
+    <input type="text" id="txtEmail" placeholder="Email"/>
+  </div>
+
+  <div>
+    <label>Phone</label>
+    <input type="text" id="txtPhone" placeholder="Phone"/>
+  </div>
+
+  <div>
+    <label>I'm interested in ...</label>
+    <br>
+    <div class="leftCheck">
+    <input type="checkbox" id="tshirt" value="shirt" onclick="togProd(this)"/> T-Shirt <br />
+    <input type="checkbox" id="swshirt" value="sweatshirt" onclick="togProd(this)"/> Sweatshirt <br />
+    <input type="checkbox" id="hat" value="hat" onclick="togProd(this)"/> Hat <br />
+    <input type="checkbox" id="onsie" value="onsie" onclick="togProd(this)"/> Onsie <br />
+</div>
+<div class="rightCheck">
+    <input type="checkbox" id="koozie" value="koozie" onclick="togProd(this)"/> Koozie <br />
+    <input type="checkbox" id="mug" value="mug" onclick="togProd(this)"/> Mug <br />
+    <input type="checkbox" id="other" value="other" onclick="togProd(this)"/> Other <br />
+</div>
+</div>
+<div class="clear"></div>
+
+<hr size="1" noshade color="#3F250B">
+  <div id="divtshirt" style="display:none;" class="specs">
+
+      <label>Tell me more about the shirts</label>
+      <br>
+      <input type="checkbox" id="tshirt_ss" value="shirt_ss"/> Short Sleve <input type="checkbox" id="tshirt_ls" value="shirt_ls"/> Long Sleave <br>
+      <input type="checkbox" id="tshirt_sm" value="shirt_sm"/>SM <input type="checkbox" id="tshirt_md" value="shirt_md"/>MED <input type="checkbox" id="tshirt_lg" value="shirt_lg"/>LG <input type="checkbox" id="tshirt_xl" value="shirt_xl"/>XL <br><br>
+      <label>Quantity</label>
+      <br>
+      <input type="text" id="tshirt_count" placeholder="Quantity" size="10"/><br />
+      <label>More Details</label>
+      <br>
+      <input type="text" id="tshirt_details" placeholder="What else should I know? "/><br />
+  </div>
+
+  <div id="divswshirt"  class="specs" style="display:none;">
+      <label>Tell me more about the sweatshirts</label>
+      <br>
+      <input type="checkbox" id="swshirt_hood" value="swshirt_hood"/> Hoodie  <input type="checkbox" id="swshirt_no_hood" value="swshirt_no_hood"/> No Hood <br>
+      <input type="checkbox" id="swshirt_sm" value="swshirt_sm"/>SM <input type="checkbox" id="swshirt_md" value="swshirt_md"/>MED <input type="checkbox" id="swshirt_lg" value="swshirt_lg"/>LG <input type="checkbox" id="swshirt_xl" value="swshirt_xl"/>XL <br><br>
+      <label>Quantity</label>
+      <br>
+      <input type="text" id="swshirt_count" placeholder="Quantity" size="10"/><br />
+      <label>More Details</label>
+      <br>
+      <input type="text" id="swshirt_details" placeholder="What else should I know? "/><br />
+  </div>
+  <div id="divmug" class="specs" style="display:none;">
+      <label>Tell me more about the mugs</label>
+      <br>
+      <input type="checkbox" id="mug_sm" value="mug_sm"/> 10-12oz  <input type="checkbox" id="mug_lg" value="mug_lg"/> 20oz <br>
+      <input type="checkbox" id="swshirt_sm" value="swshirt_sm"/>Print 1 Side <input type="checkbox" id="swshirt_md" value="swshirt_md"/>Print Both Sides <br><br>
+      <label>Quantity</label>
+      <br>
+      <input type="text" id="mug_count" placeholder="Quantity" size="10"/><br />
+      <label>More Details</label>
+      <br>
+      <input type="text" id="mug_details" placeholder="What else should I know? "/><br />
+  </div>
+  <div id="divkoozie" class="specs" style="display:none;">
+      <label>Tell me more about the Koozies</label>
+      <br>
+      <input type="checkbox" id="mug_sm" value="mug_sm"/> Can  <input type="checkbox" id="mug_lg" value="mug_lg"/> Bottle <br>
+      <input type="checkbox" id="swshirt_sm" value="swshirt_sm"/>Print 1 Side <input type="checkbox" id="swshirt_md" value="swshirt_md"/>Print Both Sides <br><br>
+      <label>Quantity</label>
+      <br>
+      <input type="text" id="mug_count" placeholder="Quantity" size="10"/><br />
+      <label>More Details</label>
+      <br>
+      <input type="text" id="mug_details" placeholder="What else should I know? "/><br />
+  </div>
+  <div id="divhat" class="specs" style="display:none;">
+      <label>Tell me more about the Hats</label>
+      <br>
+      <input type="checkbox" id="mug_sm" value="mug_sm"/> Weathered   <input type="checkbox" id="mug_lg" value="mug_lg"/> Fitted <br>
+      <input type="checkbox" id="swshirt_sm" value="swshirt_sm"/>Plastic Adjustment <input type="checkbox" id="swshirt_md" value="swshirt_md"/>Leather Adjustment <br><br>
+      <label>Quantity</label>
+      <br>
+      <input type="text" id="mug_count" placeholder="Quantity" size="10"/><br />
+      <label>More Details</label>
+      <br>
+      <input type="text" id="mug_details" placeholder="What else should I know? "/><br />
+  </div>
+  <div id="divonsie" class="specs" style="display:none;">
+      <label>Tell me more about the onsies</label>
+      <br>
+      <input type="checkbox" id="mug_sm" value="mug_sm"/> Premie   <input type="checkbox" id="mug_lg" value="mug_lg"/> 0-2 Months <br>
+      <input type="checkbox" id="swshirt_sm" value="swshirt_sm"/>2-6 Months <input type="checkbox" id="swshirt_md" value="swshirt_md"/>Larger <br><br>
+      <label>Quantity</label>
+      <br>
+      <input type="text" id="mug_count" placeholder="Quantity" size="10"/><br />
+      <label>More Details</label>
+      <br>
+      <input type="text" id="mug_details" placeholder="What else should I know? "/><br />
+  </div>
+  <div id="divother" class="specs" style="display:none;">
+      <label>Tell me more about your ideas</label>
+      <br>
+      <input type="text" id="mug_details" placeholder="What else should I know? "/><br />
+  </div>
+
+
+  <div>
+    <button type="submit"id="submit-form">Submit</button>
+  </div>
+
+</form>
+</div>
+</body>
+  <script>
+  var $ = function(id) {return document.getElementById(id);}
+  function showHide(id) {
+  	var el = $(id);
+  	el.style.display = (el.style.display != 'none' ? 'none' : '' );
+  	}
+function togProd(item) {
+    showHide("div"+item.id)
+
+    }
+</script>
+</html>
